@@ -13,47 +13,96 @@
         android:background="#9C27B0"
         tools:context=".MainActivity">
 
-       <EditText
-           android:id="@+id/main_edt_new_word"
-         android:shadowRadius="@integer/material_motion_duration_short_2"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           app:layout_constraintTop_toTopOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           android:layout_margin="@dimen/_30sdp"
-           android:background="@color/white"
-           android:paddingTop="@dimen/_10sdp"
-           android:paddingBottom="@dimen/_10sdp"
-           android:paddingStart="@dimen/_4sdp"
-           android:textSize="@dimen/_18ssp"
-           android:hint="Type new word"
+        <EditText
+            android:id="@+id/main_edt_new_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_30sdp"
+            android:background="@color/white"
+            android:hint="Type new word"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:shadowRadius="@integer/material_motion_duration_short_2"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
 
-           />
+            />
+
+        <EditText
+            android:id="@+id/main_edt_categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_30sdp"
+            android:layout_marginTop="36dp"
+            android:background="@color/white"
+            android:hint="insert categories for the word"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:shadowRadius="@integer/material_motion_duration_short_2"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_new_word" />
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/main_bt_add_new_word"
-            app:layout_constraintTop_toBottomOf="@+id/main_edt_new_word"
-            app:layout_constraintStart_toStartOf="@+id/main_edt_new_word"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:id="@+id/main_bt_add_new"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
             android:backgroundTint="#E91E63"
             android:text="add"
-            android:textSize="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+
             android:textColor="@color/white"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
-            />
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_categories" />
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/main_bt_share_new_word"
-            app:layout_constraintTop_toBottomOf="@+id/main_edt_new_word"
-            app:layout_constraintEnd_toEndOf="@+id/main_edt_new_word"
+            android:id="@+id/main_bt_share"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
             android:layout_marginTop="@dimen/_10sdp"
             android:backgroundTint="#E91E63"
             android:text="Share"
-            android:textSize="@dimen/_20ssp"
             android:textColor="@color/white"
-            android:layout_width="@dimen/_100sdp"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintStart_toEndOf="@+id/main_bt_add_new"
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_categories" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/main_bt_add_categories"
+            android:layout_width="136dp"
             android:layout_height="wrap_content"
-            />
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:backgroundTint="#E91E63"
+            android:text="add categories"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_bt_share"
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_categories" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
