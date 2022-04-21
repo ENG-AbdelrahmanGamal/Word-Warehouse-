@@ -5,6 +5,15 @@ plugins {
 android {
     compileSdk 32
 
+    buildFeatures {
+        viewBinding true
+
+    }
+    buildFeatures {
+        dataBinding true
+    }
+
+
     defaultConfig {
         applicationId "com.example.wordbalance"
         minSdk 21

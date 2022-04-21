@@ -5,10 +5,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Words")
+@Entity(tableName = "MyWord")
 public class MyWord {
     @ColumnInfo(name = "id")
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     int id;
     @ColumnInfo(name = "name")
     String name ;

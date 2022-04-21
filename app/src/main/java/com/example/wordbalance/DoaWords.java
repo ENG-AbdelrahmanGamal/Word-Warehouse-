@@ -1,10 +1,16 @@
 package com.example.wordbalance;
 
+import android.provider.UserDictionary;
+
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.List;
+
+@Dao
 public interface DoaWords {
 
     @Insert
@@ -13,11 +19,12 @@ public interface DoaWords {
     public  void deleteWord(MyWord myWord);
     @Update
     public  void updateWord(MyWord myWord);
-    @Query("SELECT * FROM WORDS")
-    @Delete
-    public  void deleteALlWords(MyWord myWord);
-    @Query("SELECT * FROM WORDS WHERE categories LIKE'A%'"  )
-    public  void filterByCate(MyWord myWord);
+
+
+    @Query("DELETE  FROM MyWord " )
+    public  void deleteALlWords();
+   @Query("SELECT * FROM MyWord WHERE categories LIKE'A%'"  )
+   List<MyWord> filterByCate( );
 
 
 }
