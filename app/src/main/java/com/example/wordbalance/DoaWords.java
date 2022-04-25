@@ -23,8 +23,8 @@ public interface DoaWords {
 
     @Query("DELETE  FROM MyWord " )
     public  void deleteALlWords();
-   @Query("SELECT * FROM MyWord WHERE categories LIKE 'a%'" )
-   List<MyWord> filterByCate( );
+   @Query("SELECT * FROM MyWord ")
+   List<MyWord> getWords( );
 
 
 }

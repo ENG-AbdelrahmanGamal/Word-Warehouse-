@@ -11,15 +11,12 @@ public  abstract class WordRoomDatabase extends RoomDatabase {
   public static WordRoomDatabase getInstance(Context context){
       if(instance== null)
       {
-          instance= Room.databaseBuilder(context,WordRoomDatabase.class,"room")
+          instance= Room.databaseBuilder(context,WordRoomDatabase.class,"database")
                  .allowMainThreadQueries()
                 //  .fallbackToDestructiveMigration()
                   .build();
-
       }
       return instance;
-
-
   }
 public abstract DoaWords myDoaWords();
 

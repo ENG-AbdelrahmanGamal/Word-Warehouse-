@@ -32,7 +32,7 @@
             />
 
         <EditText
-            android:id="@+id/main_edt_categories"
+            android:id="@+id/main_edt_discrption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_30sdp"
@@ -51,43 +51,70 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/main_bt_add_new"
-            android:layout_width="135dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#E91E63"
+           app:icon="@drawable/ic_add"
             android:text="add"
+            android:background="@drawable/buttun"
             android:layout_marginTop="@dimen/_10sdp"
-
-            android:textColor="@color/white"
-            android:textSize="@dimen/_20ssp"
+            android:textSize="@dimen/_9ssp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_edt_categories" />
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/main_bt_share"
-            android:layout_width="136dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:backgroundTint="#E91E63"
+            android:background="@drawable/buttun"
             android:text="Share"
             android:textColor="@color/white"
-            android:textSize="@dimen/_20ssp"
-            app:layout_constraintStart_toEndOf="@+id/main_bt_add_new"
-            app:layout_constraintTop_toBottomOf="@+id/main_edt_categories" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/main_bt_add_categories"
-            android:layout_width="136dp"
+            android:textSize="@dimen/_9ssp"
+            app:icon="@drawable/ic_share"
+            app:layout_constraintStart_toEndOf="@+id/main_bt_add_new"
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption" />
+
+        <!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/main_bt_add_categories"-->
+<!--            android:layout_width="0dp"-->
+<!--            app:icon="@drawable/ic_add"-->
+<!--            android:background="@drawable/buttun"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:text="add categories"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/_9ssp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/main_bt_share"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption" />-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/main_tv_categorName_inputlayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:backgroundTint="#E91E63"
-            android:text="add categories"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_10ssp"
+            android:textColorHint="@color/white"
+            android:background="@color/purple_500"
+            android:hint="Categories"
+            app:hintTextColor="#515C6F"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/main_bt_share"
-            app:layout_constraintTop_toBottomOf="@+id/main_edt_categories" />
+            app:layout_constraintBottom_toBottomOf="@+id/main_bt_share"
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption"
+            app:startIconDrawable="@drawable/ic_add">
+            <AutoCompleteTextView
+                app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/main_tv_categoriosName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:inputType="none"
+                tools:layout_editor_absoluteX="247dp"
+                tools:layout_editor_absoluteY="196dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -102,6 +129,20 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_bt_share"
+            app:layout_constraintVertical_bias="0.146"
+            tools:listitem="@layout/activity_items_new_words" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
