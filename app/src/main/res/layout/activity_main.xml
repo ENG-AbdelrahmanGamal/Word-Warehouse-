@@ -32,16 +32,16 @@
             />
 
         <EditText
-            android:id="@+id/main_edt_discrption"
+            android:id="@+id/main_edt_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_30sdp"
             android:layout_marginTop="36dp"
             android:background="@color/white"
-            android:hint="insert categories for the word"
+            android:paddingBottom="@dimen/_50sdp"
+            android:hint="insert description of the new word"
             android:paddingStart="@dimen/_4sdp"
             android:paddingTop="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_10sdp"
             android:shadowRadius="@integer/material_motion_duration_short_2"
             android:textSize="@dimen/_18ssp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:textSize="@dimen/_9ssp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption" />
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_description" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/main_bt_share"
@@ -74,7 +74,7 @@
             android:textSize="@dimen/_9ssp"
             app:icon="@drawable/ic_share"
             app:layout_constraintStart_toEndOf="@+id/main_bt_add_new"
-            app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption" />
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_description" />
 
         <!--        <com.google.android.material.button.MaterialButton-->
 <!--            android:id="@+id/main_bt_add_categories"-->
@@ -88,7 +88,7 @@
 <!--            android:textSize="@dimen/_9ssp"-->
 <!--            app:layout_constraintEnd_toEndOf="parent"-->
 <!--            app:layout_constraintStart_toEndOf="@+id/main_bt_share"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption" />-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/main_edt_description" />-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/main_tv_categorName_inputlayout"
@@ -102,10 +102,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/main_bt_share"
             app:layout_constraintBottom_toBottomOf="@+id/main_bt_share"
-            app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption"
+            app:layout_constraintTop_toBottomOf="@+id/main_edt_description"
             app:startIconDrawable="@drawable/ic_add">
             <AutoCompleteTextView
-                app:layout_constraintTop_toBottomOf="@+id/main_edt_discrption"
+                app:layout_constraintTop_toBottomOf="@+id/main_edt_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:id="@+id/main_tv_categoriosName"
                 android:layout_width="wrap_content"

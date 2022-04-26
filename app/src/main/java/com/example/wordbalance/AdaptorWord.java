@@ -37,7 +37,8 @@ public class AdaptorWord  extends RecyclerView.Adapter<AdaptorWord.WordsHolder> 
     @Override
     public void onBindViewHolder(@NonNull WordsHolder holder, int position) {
     holder.binding.setWords(words.get(position));
-    }
+    // holder.binding.itemTvCount.setText(words.size());
+    }zx
 
     @Override
     public int getItemCount() {
@@ -53,4 +54,10 @@ public class AdaptorWord  extends RecyclerView.Adapter<AdaptorWord.WordsHolder> 
         }
 
     }
+    public void updateWords(List<MyWord>list)
+    {
+        words=list;
+        notifyDataSetChanged();
+    }
+
 }

@@ -41,17 +41,15 @@ public class MainActivity extends AppCompatActivity {
         adaptor=new AdaptorWord(doaWords2.getWords());
         binding.recyclerView.setAdapter(adaptor);
        // doaWords2 = WordRoomDatabase.getInstance(this).myDoaWords();
+        adaptor.notifyDataSetChanged();
 
         binding.mainBtAddNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 addWord();
+                adaptor.notifyDataSetChanged();
 
-
-
-              //  getNumberOfWords();
+                //  getNumberOfWords();
             }
         });
 binding.mainBtShare.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +64,7 @@ binding.mainBtShare.setOnClickListener(new View.OnClickListener() {
     void addWord() {
         String  nameWord,discription, categores;
         nameWord=binding.mainEdtNewWord.getText().toString().trim();
-        discription=binding.mainEdtDiscrption.getText().toString().trim();
+        discription=binding.mainEdtDescription.getText().toString().trim();
         categores=binding.mainTvCategoriosName.getText().toString().trim();
         if(nameWord.isEmpty()||discription.isEmpty()||categores.isEmpty())
         {
@@ -81,7 +79,10 @@ binding.mainBtShare.setOnClickListener(new View.OnClickListener() {
     @Override
     protected void onRestart() {
         super.onRestart();
-        listOfWord=doaWords2.getWords();
+        Log.i(TAG, "onRestart: before"+listOfWord.size());
+        adaptor.updateWords(listOfWord);
+        Log.i(TAG, "onRestart: after "+listOfWord.size());
+
         adaptor.notifyDataSetChanged();
     }
 
@@ -90,7 +91,8 @@ binding.mainBtShare.setOnClickListener(new View.OnClickListener() {
         Toast.makeText(this, "word success", Toast.LENGTH_SHORT).show();
        // finish();
       listOfWord.add(myWord);
-
+      adaptor.updateWords(listOfWord);
+     adaptor.notifyDataSetChanged();
     }
 
 
